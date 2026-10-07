@@ -1,0 +1,1 @@
+import pg from 'pg';const c=new pg.Client({connectionString:process.env.DATABASE_URL});await c.connect();await c.query("INSERT INTO sites(name) SELECT 'Primary Site' WHERE NOT EXISTS(SELECT 1 FROM sites)");await c.end();console.log('seed complete');
