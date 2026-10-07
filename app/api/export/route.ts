@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server';export async function GET(){const csv='ID,Machine,Reason,Status,Severity,Reported,Downtime\n';return new NextResponse(csv,{headers:{'Content-Type':'text/csv','Content-Disposition':'attachment; filename="breakdowns.csv"'}})}
