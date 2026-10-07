@@ -1,0 +1,1 @@
+import fs from 'node:fs';import pg from 'pg';const c=new pg.Client({connectionString:process.env.DATABASE_URL});await c.connect();const sql=fs.readFileSync(new URL('../database/init.sql',import.meta.url),'utf8');await c.query(sql);await c.end();console.log('database initialized');
